@@ -1,0 +1,36 @@
+<!-- Tabla que se incluye en archivo <listado_registros> -->
+<!-- Desarrolla y muestra una tabla con el listado con todos los registros diarios -->
+
+<br>
+<h2>{{ titulo_listado }}</h2>
+<table class="table table-sm table-striped table-bordered">
+    <thead>
+        <tr class="bg-primary">
+            <td>Fecha de consumo</td>
+            <td>Vasos por la mañana</td>
+            <td>Vasos por al mediodía</td>
+            <td>Vasos por la tarde</td>
+            <td>Vasos por la noche</td>
+            <td>Total de vasos en el día</td>
+            <td>Volumen total en el día (l)</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dato_para_listar in datos_para_listar %}
+            <input type="hidden" value="{{ dato_para_listar._id }}" name="id">
+            <tr>
+                <td>{{ dato_para_listar.fecha_consumo }}</td>
+                <td>{{ dato_para_listar.vasos_manana }}</td>
+                <td>{{ dato_para_listar.vasos_mediodia }}</td>
+                <td>{{ dato_para_listar.vasos_tarde }}</td>
+                <td>{{ dato_para_listar.vasos_noche }}</td>
+                <td>{{ dato_para_listar.vasos_total_dia }}</td>
+                <td>{{ dato_para_listar.volumen_total_dia }}</td>
+                <td>
+                    <a class="btn btn-sm btn-primary" href="/ruta_editar/{{ dato_para_listar._id }}">Modifica</a>
+                    <a class="btn btn-sm btn-warning" href="/ruta_borrar/{{ dato_para_listar._id }}">Borra</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

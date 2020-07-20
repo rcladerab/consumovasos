@@ -1,0 +1,20 @@
+<!-- Formulario que se incluye en archivo <borrar.html> -->
+
+<br>    
+<h3>Esto te muestra lo que quieres borrar: </h3>
+<form action="/ruta_borrar_confirmado" method="POST">
+    <input type="hidden" value="{{ datos_para_borrar._id }}" name="id">
+    <br>
+    <input type="date" name="fecha_consumo" placeholder="Fecha de consumo" value = {{ datos_para_borrar.fecha_consumo }} >
+    <br>
+    <br>
+    Nº de vasos que te has tomado por la mañana: <input type="number" name="vasos_manana" value = {{ datos_para_borrar.vasos_manana }}>
+    <br>
+    Nº de vasos que te has tomado al mediodía: <input type="number" name="vasos_mediodia" value = {{ datos_para_borrar.vasos_mediodia }}>
+    <br>
+    Nº de vasos que te has tomado por la tarde:  <input type="number" name="vasos_tarde" value = {{ datos_para_borrar.vasos_tarde }}>
+    <br>
+    Nº de vasos que te has tomado por la noche: <input type="number" name="vasos_noche" value = {{ datos_para_borrar.vasos_noche }}>
+    <br>
+    <button class="btn btn-sm btn-warning" type="submit">¡Borra definitivamente!</button>
+</form>

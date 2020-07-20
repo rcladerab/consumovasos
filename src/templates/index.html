@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+<!-- HEADER -->
+    {% block header %}
+        {# A continuación incluyo el menú de navegación #}
+        {% include "menu_superior_navegacion.html" %}
+    {% endblock %}
+        
+<!-- MAIN -->
+    {% block main %}
+        {# A continuación incluyo el texto en el main #}
+        {% include "texto_main.html" %}
+    {% endblock %}  
+
+<!-- FOOTER -->
+    {% block footer %}
+        {# Esto lo dejo de momento vacío #}
+    {% endblock %} 
